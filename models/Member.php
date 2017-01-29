@@ -75,13 +75,9 @@ class Member extends Model
             $member->setRelation('user', $user);
         }
         else {
-            $generatedUsername = explode('@', $user->email);
-            $generatedUsername = array_shift($generatedUsername);
-            $generatedUsername = Str::limit($generatedUsername, 24, '') . $user->id;
-
             $member = new static;
             $member->user = $user;
-            $member->username = $generatedUsername;
+            $member->username = $user->username;
             $member->save();
 
             $user->forum_member = $member;

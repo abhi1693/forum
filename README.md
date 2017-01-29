@@ -8,7 +8,7 @@ You can help us to make this plugin bigger, better and badass. Check out our roa
 
 # Roadmap
 
-- [ ] Change namespace
+- [x] Change namespace
 - [ ] Fix the layouts to look more neat
 - [ ] Remove unnecessary code
 - [ ] Change markdown editor with bbcode editor

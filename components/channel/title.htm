@@ -3,18 +3,23 @@
     <div class="col-md-9">
         {{ form_open({ method: 'get' })}}
             <div class="search-box">
-                <input type="text" name="search" class="form-control" placeholder="Search topics" value="{{ input('search')|e }}">
+                <div class="input-group">
+                  <input type="text" name="search" class="form-control" placeholder="Search topics" value="{{ input('search')|e }}">
+                  <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
+                  </span>
+                </div>
             </div>
         {{ form_close() }}
     </div>
     <div class="col-md-3 text-right">
         {% if isGuest %}
-            <p>Log in to Post a new topic</p>
+            <p><a href="/user/account" class="btn btn-primary"><i class="fa fa-lock" aria-hidden="true"></i> Log in</a> to Post a new topic</p>
         {% else %}
-            <a href="{{ topicPage|page }}?channel={{ channel.id }}" class="btn btn-primary btn-block">
-                Post a new topic
-            </a>
+            <a href="{{ topicPage|page }}?channel={{ channel.id }}" class="btn btn-danger btn-block"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Post a new topic</a>
         {% endif %}
     </div>
 
 </div>
+
+<br />

@@ -3,14 +3,14 @@
         {{ member.username }}
     </h5>
     <p>
-        <img src="{{ member.user.avatarThumb(50) }}" />
+        <img src="{{ member.user.avatarThumb(50)|resize(50,50) }}" class="img-rounded" />
     </p>
     <p>Member since: {{ member.created_at|date('M Y') }}</p>
     {% if member.is_banned %}
-        <p>{{ member.username }} has been banned from posting</p>
+        <p class="text-danger"><i class="fa fa-ban" aria-hidden="true"></i> {{ member.username }} has been banned from posting</p>
     {% endif %}
     {% if member.is_moderator %}
-        <p>{{ member.username }} is a forum moderator</p>
+        <p class="text-info"><i class="fa fa-star" aria-hidden="true"></i> {{ member.username }} is a forum moderator</p>
     {% endif %}
 
     <h4>Recent posts</h4>

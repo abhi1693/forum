@@ -3,7 +3,12 @@
     <div class="col-md-12">
         {{ form_open({ method: 'get' })}}
             <div class="search-box">
-                <input type="text" name="search" class="form-control" placeholder="Search topics" value="{{ input('search')|e }}">
+                <div class="input-group">
+                  <input type="text" name="search" class="form-control" placeholder="Search topics" value="{{ input('search')|e }}">
+                  <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
+                  </span>
+                </div>
             </div>
         {{ form_close() }}
     </div>
