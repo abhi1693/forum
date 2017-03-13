@@ -72,7 +72,7 @@
         </div>
     {% else %}
         <div class="text">
-            {{ post.content_html|bbcode }}
+            {{ post.content_html|raw }}
 
             {% if post.created_at != post.updated_at %}
                 <p><small class="text text-muted">Last updated {{ post.updated_at.diffForHumans }}</small></p>

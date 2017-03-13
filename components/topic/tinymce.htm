@@ -1,0 +1,33 @@
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script>
+  tinymce.init({
+    selector: 'textarea',  // change this value according to your HTML
+    theme: 'modern',
+    width: '100%',
+    height: 300,
+    plugins: [
+      'advlist anchor autolink autosave charmap code codesample contextmenu directionality',
+      'emoticons hr insertdatetime link lists nonbreaking paste preview save',
+      'searchreplace table textpattern visualblocks visualchars wordcount'
+    ],
+    toolbar: 'insertfile undo redo | bold italic underline styleselect | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | ltr rtl | codesample | emoticons | restoredraft',
+    convert_fonts_to_spans : false,
+    convert_urls: false,
+    custom_undo_redo_levels: 10,
+    end_container_on_empty_block: true,
+    code_dialog_height: 200,
+    textpattern_patterns: [
+      {start: '_', end: '_', format: 'italic'},
+      {start: '**', end: '**', format: 'bold'},
+      {start: '#', format: 'h1'},
+      {start: '##', format: 'h2'},
+      {start: '###', format: 'h3'},
+      {start: '####', format: 'h4'},
+      {start: '#####', format: 'h5'},
+      {start: '######', format: 'h6'},
+      {start: '1. ', cmd: 'InsertOrderedList'},
+      {start: '- ', cmd: 'InsertUnorderedList'}],
+    visualblocks_default_state: false,
+    wordcount_cleanregex: /[0-9.(),;:!?%#$?\x27\x22_+=\\\/\-]*/g,
+  });
+</script>

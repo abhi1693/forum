@@ -1,5 +1,7 @@
 <div class="rainlab-forum">
 
+    {% partial "@tinymce" %}
+
     {% flash %}
         <div class="alert alert-{{ type == 'error' ? 'danger' : type }}">
             {{ message }}
