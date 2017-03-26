@@ -105,7 +105,6 @@ class Topic extends ComponentBase
     public function onRun()
     {
         $this->addCss('assets/css/forum.css');
-        $this->addJs('assets/js/forum.js');
 
         $this->prepareVars();
         $this->page['channel'] = $this->getChannel();
